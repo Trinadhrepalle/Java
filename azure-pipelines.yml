@@ -2,10 +2,7 @@ name: samplejavaproject_$(Date:yyyyMMdd)$(Rev:r)
 trigger:
  - master
 pool:
-  name: Azure Pipelines
-  demands:
-  - msbuild
-  - visualstudio
+  name: Default
 steps:
 - task: PowerShell@2
   inputs:
