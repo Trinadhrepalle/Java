@@ -2,7 +2,7 @@ name: samplejavaproject_$(Date:yyyyMMdd)$(Rev:r)
 trigger:
  - master
 pool:
- name: Default
+ name: MSBuild
 steps:
 - task: VSBuild@1
   inputs:
