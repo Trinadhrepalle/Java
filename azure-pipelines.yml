@@ -1,6 +1,6 @@
 name: samplejavaproject_$(Date:yyyyMMdd)$(Rev:r)
 trigger:
- - main
+ - master
 pool:
  name: Default
 steps:
