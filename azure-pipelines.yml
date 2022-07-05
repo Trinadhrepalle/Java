@@ -11,3 +11,5 @@ steps:
       # Write your PowerShell commands here.
       
       Write-Host "Hello World"
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
