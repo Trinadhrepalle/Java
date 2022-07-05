@@ -13,3 +13,5 @@ steps:
       Write-Host "Hello World"
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Pipeline Artifact'
