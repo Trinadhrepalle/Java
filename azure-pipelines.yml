@@ -11,5 +11,7 @@ steps:
       # Write your PowerShell commands here.
       
       Write-Host "Hello World"
-- task: PublishPipelineArtifact@1
-  displayName: 'Publish Pipeline Artifact'
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/TEST-*.xml'
