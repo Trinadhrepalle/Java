@@ -4,14 +4,13 @@ trigger:
 pool:
   name: Azure Pipelines
 steps:
-- task: PowerShell@2
+- task: Maven@3
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      
-      Write-Host "Hello World"
-- task: PublishTestResults@2
-  inputs:
-      testResultsFormat: 'JUnit'
-      testResultsFiles: '**/TEST-*.xml'
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
