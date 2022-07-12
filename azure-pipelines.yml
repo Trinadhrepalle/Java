@@ -11,7 +11,7 @@ steps:
       # Write your PowerShell commands here.
       
       Write-Host "Hello World"
-  - task: PublishTestResults@2
-    inputs:
+- task: PublishTestResults@2
+  inputs:
       testResultsFormat: 'JUnit'
       testResultsFiles: '**/TEST-*.xml'
