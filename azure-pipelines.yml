@@ -4,10 +4,13 @@ trigger:
 pool:
   name: Azure Pipelines
 steps:
-  - uses: actions/checkout@v3
-  - uses: actions/setup-java@v3
-    with:
-      java-version: '11'
-      distribution: 'adopt'
-  - name: Run the Maven verify phase
-    run: mvn --batch-mode --update-snapshots verify
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
